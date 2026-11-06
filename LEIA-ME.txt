@@ -1,0 +1,42 @@
+ESTOQUE SCANNER - como colocar no ar
+=====================================
+
+Este e um app web (PWA). Para a camera funcionar no celular, ele
+precisa ser aberto por um endereco HTTPS. Escolha uma opcao:
+
+OPCAO 1 - Netlify Drop (mais rapido, sem conta tecnica)
+  1. Acesse https://app.netlify.com/drop
+  2. Arraste a PASTA 'estoque-app' inteira para a area indicada
+     (ou descompacte o zip e arraste a pasta).
+  3. Em segundos ele gera um link HTTPS. Abra esse link no celular.
+  4. No navegador do celular, use 'Adicionar a tela inicial' para
+     instalar o icone do app.
+
+OPCAO 2 - GitHub Pages
+  1. Crie um repositorio e envie todos os arquivos desta pasta.
+  2. Em Settings > Pages, publique a branch principal.
+  3. Abra o link HTTPS gerado no celular e instale na tela inicial.
+
+OPCAO 3 - Testar no computador (sem instalar nada)
+  Dentro desta pasta, rode no terminal:
+      python3 -m http.server 8000
+  e acesse http://localhost:8000 no navegador do mesmo computador.
+  (A camera so funciona em HTTPS ou em localhost.)
+
+O QUE TEM NA PASTA
+  index.html              - o aplicativo
+  manifest.webmanifest    - define nome e icone do app
+  sw.js                   - faz o app funcionar offline
+  lib/                    - bibliotecas (leitor de codigo + Excel)
+  icon-*.png              - icones do app
+
+FUNCIONAMENTO OFFLINE
+  Depois de abrir o app uma vez com internet, ele continua
+  funcionando sem conexao. So a busca automatica de descricao pelo
+  codigo de barras precisa de internet; sem ela, voce digita a
+  descricao manualmente.
+
+ONDE FICAM OS DADOS
+  Os produtos e as movimentacoes ficam salvos no proprio celular
+  (no navegador). Use o botao 'Baixar planilha' para gerar o
+  arquivo Excel com entradas, saidas e saldo sempre que quiser.
